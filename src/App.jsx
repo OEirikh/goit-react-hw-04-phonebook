@@ -25,7 +25,9 @@ function App() {
   }, [contacts]);
 
   const addContact = (name, number) => {
-    contacts.every((contact) => contact.name !== name)
+    contacts.every(
+      (contact) => contact.name.toLowerCase() !== name.toLowerCase()
+    )
       ? setContacts([
           ...contacts,
           {
